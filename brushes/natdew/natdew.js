@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////
 // natdew.js
 //
-// basic natdew tool: draws a thin, solid line
-// author: Justin Bakse
+// basic natdew tool: draws a thin, solid line with circles
+// author: Natasha Dewitz
 
 
 
@@ -18,11 +18,17 @@ brushes.push(natdew);
 // define brush behavior
 
 natdew.draw = function() {
-	noFill();
-	stroke(forecolor);
+	fill(forecolor);
+	noStroke();
 
 	if (mouseIsPressed) {
-		ellipse(pmouseX, pmouseY, 10, 10);
-		line(pmouseX, pmouseY, mouseX, mouseY);
+		// ellipse(pmouseX, pmouseY, mouseX + random(1, 2), mouseY + random(-1, -2));
+		rect(pmouseX, pmouseY, 40, 10);
+
+		noFill();
+		stroke(forecolor);
+		if (mouseIsPressed) {
+			ellipse(pmouseX, pmouseY, mouseX - 60, mouseY - 20);
+		}
 	}
 };
