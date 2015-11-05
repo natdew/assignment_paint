@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////
 // natdew.js
 //
-// basic natdew tool: draws a thin, solid line with circles
+// basic natdew tool: draws circlular tunnel with a line of rectangles in it
 // author: Natasha Dewitz
 
 
@@ -13,16 +13,14 @@ var natdew = new Brush("natdew", "./brushes/natdew/natdew.svg");
 brushes.push(natdew);
 
 
-
 ////////////////////////////////////////////////////////////////////
 // define brush behavior
 
 natdew.draw = function() {
+
 	fill(forecolor);
 	noStroke();
-
 	if (mouseIsPressed) {
-		// ellipse(pmouseX, pmouseY, mouseX + random(1, 2), mouseY + random(-1, -2));
 		rect(pmouseX, pmouseY, 40, 10);
 
 		noFill();
